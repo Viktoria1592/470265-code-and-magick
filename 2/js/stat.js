@@ -21,10 +21,19 @@ var GAP = 50;
 var VALUE_GAP = 10;
 var BAR_FULL_HEIGHT = 150;
 var BAR_MAX_HEIGHT = BAR_FULL_HEIGHT - VALUE_GAP;
+var TITLE_UPPER = 'Ура вы победили!';
+var TITLE_UNDER = 'Список результатов:';
+var TITLE_UNDER_Y = TITLE_Y + TEXT_HEIGHT;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
+};
+
+var renderText = function (ctx, text, font, textColor, x, y) {
+  ctx.font = font;
+  ctx.fillStyle = textColor;
+  ctx.fillText(text, x, y);
 };
 
 var getMaxValue = function (values) {
@@ -48,10 +57,8 @@ window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + CLOUD_GAP, CLOUD_Y + CLOUD_GAP, SHADOW_COLOR);
   renderCloud(ctx, CLOUD_X, CLOUD_Y, CLOUD_COLOR);
 
-  ctx.font = FONT;
-  ctx.fillStyle = TEXT_COLOR;
-  ctx.fillText('Ура вы победили!', TITLE_X, TITLE_Y);
-  ctx.fillText('Список результатов:', TITLE_X, TITLE_Y + TEXT_HEIGHT);
+  renderText(ctx, TITLE_UPPER, FONT, TEXT_COLOR, TITLE_X, TITLE_Y);
+  renderText(ctx, TITLE_UNDER, FONT, TEXT_COLOR, TITLE_X, TITLE_UNDER_Y);
 
   for (var i = 0; i < times.length; i++) {
     if (names[i] === 'Вы') {
@@ -60,7 +67,7 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = getRandomOpacity(BAR_COLOR);
     }
 
-    var barValueHeight = Math.round(times[i] * BAR_MAX_HEIGHT / getMaxValue(times));
+    var barValueHeight = Math.round(Math.round(times[i]) * BAR_MAX_HEIGHT / getMaxValue(times));
     ctx.fillRect(BAR_X + (BAR_WIDTH + GAP) * i, BAR_Y - TEXT_HEIGHT - barValueHeight, BAR_WIDTH, barValueHeight);
 
     ctx.fillStyle = TEXT_COLOR;
