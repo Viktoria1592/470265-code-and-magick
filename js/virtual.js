@@ -1,21 +1,22 @@
 'use strict';
 
 (function () {
-  window.ESC_KEYCODE = 27;
-  window.ENTER_KEYCODE = 13;
-  var COLORS = ['red', 'green', 'blue'];
+  var ESC_KEYCODE = 27;
+  var ENTER_KEYCODE = 13;
 
-   window.virtual = {
+  window.virtual = {
     getRandomBetween: function (min, max) {
       return Math.round(Math.random() * (max - min) + min);
     },
     isEscEvent: function (evt, action) {
-      if (evt.keyCode === ESC_KEYCODE)
+      if (evt.keyCode === ESC_KEYCODE) {
         action();
+      }
     },
     isEnterEvent: function (evt, action) {
-      if (evt.keyCode === ENTER_KEYCODE)
+      if (evt.keyCode === ENTER_KEYCODE) {
         action();
+      }
     },
     getRandomColor: function (colors) {
       return colors[Math.floor(colors.length * Math.random())];
@@ -30,6 +31,5 @@
         }
       });
     }
-   };
+  };
 })();
-

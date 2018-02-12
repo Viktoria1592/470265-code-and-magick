@@ -42,5 +42,5 @@
   window.dialog = {
     popup: popup,
     onPopupEscPress: onPopupEscPress
-  }
+  };
 })();
