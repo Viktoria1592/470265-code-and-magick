@@ -6,15 +6,15 @@
   var popupCloseButton = popup.querySelector('.setup-close');
 
   var onPopupEscPress = function (evt) {
-    window.virtual.isEscEvent(evt, closePopup);
+    window.utils.isEscEvent(evt, closePopup);
   };
 
   var onOpenBtnEnterPress = function (evt) {
-    window.virtual.isEnterEvent(evt, openPopup);
+    window.utils.isEnterEvent(evt, openPopup);
   };
 
   var onCloseBtnEnterPress = function (evt) {
-    window.virtual.isEnterEvent(evt, closePopup);
+    window.utils.isEnterEvent(evt, closePopup);
   };
 
   var openPopup = function () {
@@ -27,15 +27,11 @@
     document.removeEventListener('keydown', onPopupEscPress);
   };
 
-  popupOpenButton.addEventListener('click', function () {
-    openPopup();
-  });
+  popupOpenButton.addEventListener('click', openPopup);
 
   popupOpenButton.addEventListener('keydown', onOpenBtnEnterPress);
 
-  popupCloseButton.addEventListener('click', function () {
-    closePopup();
-  });
+  popupCloseButton.addEventListener('click', closePopup);
 
   popupCloseButton.addEventListener('keydown', onCloseBtnEnterPress);
 

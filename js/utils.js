@@ -4,7 +4,7 @@
   var ESC_KEYCODE = 27;
   var ENTER_KEYCODE = 13;
 
-  window.virtual = {
+  window.utils = {
     getRandomBetween: function (min, max) {
       return Math.round(Math.random() * (max - min) + min);
     },
@@ -23,7 +23,7 @@
     },
     colorize: function (element, colors) {
       element.addEventListener('click', function (evt) {
-        var color = window.virtual.getRandomColor(colors);
+        var color = window.utils.getRandomColor(colors);
         if (evt.target.tagName.toLowerCase() === 'div') {
           element.style.backgroundColor = color;
         } else {
