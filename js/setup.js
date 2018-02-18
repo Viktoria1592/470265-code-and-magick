@@ -39,15 +39,7 @@
   renderSimilarWizards(similarWizards);
   document.querySelector('.setup-similar').classList.remove('hidden');
 
-  window.utils.colorize(window.dialog.popup.querySelector('.wizard-coat'), window.setup.WIZARD_COAT_COLORS);
-
-  window.utils.colorize(document.querySelector('.wizard-eyes'), window.setup.WIZARD_EYES_COLORS);
-
+  window.utils.colorize(window.dialog.popup.querySelector('.wizard-coat'), WIZARD_COAT_COLORS);
+  window.utils.colorize(document.querySelector('.wizard-eyes'), WIZARD_EYES_COLORS);
   window.utils.colorize(document.querySelector('.setup-fireball-wrap'), WIZARD_FIREBALL_COLORS);
-
-  window.setup = {
-    WIZARD_COAT_COLORS: WIZARD_COAT_COLORS,
-    WIZARD_EYES_COLORS: WIZARD_EYES_COLORS
-  };
-
 })();
