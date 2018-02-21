@@ -21,7 +21,10 @@
 
   artifactsElement.addEventListener('drop', function (evt) {
     evt.target.style.backgroundColor = '';
-    evt.target.appendChild(draggedItem);
+    var draggedCopy = draggedItem.cloneNode(true);
+    if (!evt.target.firstChild && evt.target.tagName.toLowerCase() !== 'img') {
+      evt.target.appendChild(draggedCopy);
+    }
     evt.preventDefault();
   });
 
