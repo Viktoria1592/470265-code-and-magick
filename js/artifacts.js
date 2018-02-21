@@ -21,8 +21,8 @@
 
   artifactsElement.addEventListener('drop', function (evt) {
     evt.target.style.backgroundColor = '';
-    var draggedCopy = draggedItem.cloneNode(true);
     if (!evt.target.firstChild && evt.target.tagName.toLowerCase() !== 'img') {
+      var draggedCopy = draggedItem.cloneNode(true);
       evt.target.appendChild(draggedCopy);
     }
     evt.preventDefault();
