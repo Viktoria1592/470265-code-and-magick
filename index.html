@@ -67,7 +67,7 @@
   </div>
 </header>
 
-<div class="overlay setup hidden">
+<div class="overlay setup hidden" draggable="true">
   <form class="setup-wizard-form"
         method="post"
         enctype="multipart/form-data"
@@ -78,7 +78,7 @@
       <div class="setup-user">
         <div class="upload">
           <img class="setup-user-pic" src="./img/user-1.jpg"/>
-          <input type="file" name="avatar">
+          <input name="avatar" type="file">
         </div>
         <label>
           <input type="text" minlength="2" maxlength="25" name="username"
@@ -92,16 +92,16 @@
 
 
     <div class="setup-artifacts-shop">
-      <div class="setup-artifacts-cell"><img src="img/icon-star.png" alt="Star" width="65" height="50" draggable="true">
+      <div class="setup-artifacts-cell" draggable="true"><img src="img/icon-star.png" alt="Star" width="65" height="50" draggable="true">
       </div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
 
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
+      <div class="setup-artifacts-cell" draggable="true"></div>
     </div>
 
     <div class="setup-player">
@@ -210,6 +210,7 @@
 <script src="js/dialog.js"></script>
 <script src="js/setup.js"></script>
 <script src="js/user-name-input.js"></script>
+<script src="js/artifacts.js"></script>
 <script src="js/game.js"></script>
 
 </body>
