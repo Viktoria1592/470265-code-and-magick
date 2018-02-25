@@ -1,12 +1,9 @@
 'use strict';
 
 (function () {
-  var POPUP_INITIAL_X = '50%';
-  var POPUP_INITIAL_Y = '80px';
   var popup = document.querySelector('.setup');
   var popupOpenButton = document.querySelector('.setup-open');
   var popupCloseButton = popup.querySelector('.setup-close');
-  popup.classList.remove('hidden');
 
   var onPopupEscPress = function (evt) {
     window.utils.isEscEvent(evt, closePopup);
@@ -21,8 +18,8 @@
   };
 
   var resetPopupPosition = function () {
-    popup.style.left = POPUP_INITIAL_X;
-    popup.style.top = POPUP_INITIAL_Y;
+    popup.style.left = '';
+    popup.style.top = '';
   };
 
   var openPopup = function () {
