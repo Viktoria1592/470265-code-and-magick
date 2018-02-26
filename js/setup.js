@@ -49,8 +49,10 @@
     }
   });
 
-  shopElement.addEventListener('dragend', function () {
-    artifactsElement.style.outline = 'none';
+  shopElement.addEventListener('dragend', function (evt) {
+    if (evt.target.tagName.toLowerCase() === 'img') {
+      artifactsElement.style.outline = 'none';
+    }
   });
 
   var artifactsElement = document.querySelector('.setup-artifacts');
