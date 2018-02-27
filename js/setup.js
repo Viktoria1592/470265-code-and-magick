@@ -12,8 +12,8 @@
 
   var fillSimilarWizard = function (wizardObj, wizardTemplate) {
     wizardTemplate.querySelector('.setup-similar-label').textContent = wizardObj.name;
-    wizardTemplate.querySelector('.wizard-coat').style.fill = wizardObj.coatColor;
-    wizardTemplate.querySelector('.wizard-eyes').style.fill = wizardObj.eyesColor;
+    wizardTemplate.querySelector('.wizard-coat').style.fill = wizardObj.colorCoat;
+    wizardTemplate.querySelector('.wizard-eyes').style.fill = wizardObj.colorEyes;
     return wizardTemplate;
   };
 
