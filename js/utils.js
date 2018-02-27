@@ -30,6 +30,18 @@
           element.style.fill = color;
         }
       });
+    },
+    getRandomElementsFromArray: function (array, quant) {
+      var newArray = array.slice();
+      var resultArray = [];
+      for (var i = 0; i < quant; i++) {
+        var index = window.utils.getRandomBetween(0, newArray.length - 1);
+        var rndEl = newArray[index];
+        newArray[index] = newArray[newArray.length - 1];
+        newArray[newArray.length - 1] = rndEl;
+        resultArray.push(newArray.pop());
+      }
+      return resultArray;
     }
   };
 })();
